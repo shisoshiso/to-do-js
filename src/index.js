@@ -28,7 +28,11 @@ const onClickAdd = () => {
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    alert("削除");
+    // 押された削除ボタンの親タグ(div)を未完了リストから削除
+    // parentNodeを２回つけるのが気になるが、、
+    const deleteTarget = deleteButton.parentNode.parentNode;
+    // console.log(deleteTarget)
+    document.getElementById("incomplete-list").removeChild(deleteTarget);
   });
 
   // liの子要素に各要素を設定
